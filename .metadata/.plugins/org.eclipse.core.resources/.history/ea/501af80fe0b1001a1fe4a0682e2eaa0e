@@ -1,0 +1,57 @@
+package com.management.employee;
+
+import java.util.Iterator;
+import java.util.Set;
+import java.util.TreeSet;
+
+public class EmployeeDBUsingTreeSet {
+	private Set<Employee> treeSet;
+
+	public EmployeeDBUsingTreeSet() {
+		treeSet = new TreeSet<>();
+	}
+
+	public void addEmployee(Employee e) {
+		treeSet.add(e);
+	}
+
+	public boolean deleteEmployee(int empId) {
+		return treeSet.removeIf(e -> e.getEmpId() == empId);
+	}
+
+	public String showPaySlip(int empId) {
+		Iterator<Employee> it = treeSet.iterator();
+		while (it.hasNext()) {
+			Employee e = it.next();
+			if (e.getEmpId() == empId) {
+				return e.getEmpSalary() + "";
+			}
+		}
+		return null;
+	}
+
+	public Set<Employee> listAll() {
+		return treeSet;
+	}
+
+	public static void main(String[] args) {
+		Employee e1 = new Employee(1, "Ananya", "ananya@gmail.com", 'F', 50000.0f);
+		Employee e2 = new Employee(2, "Ayush", "ayush@gmail.com", 'M', 55000.0f);
+		System.out.println("employee details:");
+		e1.getEmployeeDetails();
+		e2.getEmployeeDetails();
+		EmployeeDBUsingTreeSet db = new EmployeeDBUsingTreeSet();
+		db.addEmployee(e1);
+		db.addEmployee(e2);
+		System.out.println("Displaying payslip salary of employee with id 1");
+		System.out.println(db.showPaySlip(1));
+		System.out.println("Displaying db data:");
+		Set<Employee> treeset = db.listAll();
+		Iterator<Employee> it = treeset.iterator();
+		while (it.hasNext()) {
+			Employee e = it.next();
+			System.out.println(e.getEmpId() + " " + e.getEmpName() + " " + e.getEmpEmail() + " " + e.getEmpGender()
+					+ " " + e.getEmpSalary());
+		}
+	}
+}

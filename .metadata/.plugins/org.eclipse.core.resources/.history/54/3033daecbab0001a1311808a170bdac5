@@ -1,0 +1,25 @@
+package com.java.practice;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class MonthInWordsMap {
+
+	public static void main(String[] args) {
+		Map<Integer,String> map = new HashMap<>();
+		map.put(1, "Janulary");
+		map.put(2, "February");
+		map.put(3, "March");
+		map.put(4, "April");
+		map.put(5, "May");
+		map.put(6, "June");
+		map.put(7, "July");
+		map.put(8, "August");
+		map.put(9, "Sptember");
+		map.put(10, "October");
+		map.put(11, "November");
+		map.put(12, "December");
+		
+	}
+
+}

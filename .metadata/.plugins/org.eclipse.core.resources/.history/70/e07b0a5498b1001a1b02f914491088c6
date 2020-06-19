@@ -1,0 +1,21 @@
+package com.management.employee;
+
+public class Employee {
+	private int EmpId;
+	private String EmpName;
+	private String EmpEmail;
+	private char EmpGender;
+	private float EmpSalary;
+
+	public Employee(int empId, String empName, String empEmail, char empGender, float empSalary) {
+		super();
+		EmpId = empId;
+		EmpName = empName;
+		EmpEmail = empEmail;
+		EmpGender = empGender;
+		EmpSalary = empSalary;
+	}
+
+	public void GetEmployeeDetails() {
+	}
+}

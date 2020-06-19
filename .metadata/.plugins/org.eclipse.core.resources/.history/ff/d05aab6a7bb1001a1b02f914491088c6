@@ -1,0 +1,29 @@
+package com.java.practice.collection;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class EvenNumberArrayList {
+	private List<Integer> A1;
+	private List<Integer> A2;
+	public EvenNumberArrayList() {
+		A1 = new ArrayList<>();
+		A2 = new ArrayList<>();
+	}
+
+	public List<Integer> saveEvenNumbers(int N) {
+		A1.add(N);
+		return A1;
+	}
+	public List<Integer> printEvenNumbers() {
+		return A2;
+		
+	}
+	public int printEvenNumber(int N) {
+		return 0;
+	}
+	public static void main(String[] args) {
+
+	}
+
+}

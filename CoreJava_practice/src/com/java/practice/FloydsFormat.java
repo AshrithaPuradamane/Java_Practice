@@ -1,0 +1,35 @@
+/* Write a program to print * in Floyds format (using for and while loop) * */
+package com.java.practice;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class FloydsFormat {
+
+	public static void main(String[] args) {
+		System.out.println("Please enter a number: \n");
+		Scanner scanner = new Scanner(System.in);
+		try {
+			int number = scanner.nextInt();
+			if (number > 0) {
+				int num;
+
+				for (int i = 1; i <= number; i++) {
+					num = i;
+					while (num > 0) {
+						System.out.print("* ");
+						num--;
+					}
+					System.out.println();
+				}
+			} else {
+				System.out.println("Please enter a positive number.");
+			}
+		} catch (InputMismatchException e) {
+
+			System.out.println("Entered input is not a valid number");
+		}
+		scanner.close();
+	}
+
+}

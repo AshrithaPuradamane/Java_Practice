@@ -1,0 +1,69 @@
+package com.management.employee.arraylist;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+public class EmployeeDBUsingArrayList {
+	private List<Employee> list;
+
+	public EmployeeDBUsingArrayList() {
+		list = new ArrayList<>();
+	}
+
+	public boolean addEmployee(Employee e) {
+		return list.add(e);
+	}
+
+	public boolean deleteEmployee(int empId) {
+		return list.removeIf(e -> e.getEmpId() == empId);
+	}
+
+	public String showPaySlip(int empId) {
+		Iterator<Employee> it = list.iterator();
+		while(it.hasNext()) {
+			Employee e = it.next();
+			if(e.getEmpId() == empId) {
+				return e.getEmpSalary()+"";
+			}
+		}
+		return null;
+	}
+
+	public List<Employee> listAll() {
+		return list;
+	}
+	public static void main(String[] args) {
+		Employee e1 = new Employee(1, "Ananya", "ananya@gmail.com", 'F', 50000.0f);
+		Employee e2 = new Employee(2, "Ayush", "ayush@gmail.com", 'M', 55000.0f);
+		System.out.println("employee details:");
+		e1.getEmployeeDetails();
+		e2.getEmployeeDetails();
+		EmployeeDBUsingArrayList db = new EmployeeDBUsingArrayList();
+		db.addEmployee(e1);
+		db.addEmployee(e2);
+		System.out.println("Displaying payslip salary of employee with id 1");
+		System.out.println(db.showPaySlip(1));
+		System.out.println("Displaying db data:");
+		List<Employee> list = db.listAll();
+		Iterator<Employee> it = list.iterator();
+		while (it.hasNext()) {
+			Employee e = it.next();
+			System.out.println(e.getEmpId() + " " + e.getEmpName() + " " + e.getEmpEmail() + " " + e.getEmpGender()
+					+ " " + e.getEmpSalary());
+		}
+		System.out.println("Removing employee with id 1");
+		if(db.deleteEmployee(1)) {
+			System.out.println("Deleted successfully");
+		}
+		System.out.println("Displaying db data:");
+		List<Employee> l = db.listAll();
+		Iterator<Employee> itearator = l.iterator();
+		while (itearator.hasNext()) {
+			Employee e = itearator.next();
+			System.out.println(e.getEmpId() + " " + e.getEmpName() + " " + e.getEmpEmail() + " " + e.getEmpGender()
+					+ " " + e.getEmpSalary());
+		}
+		
+	}
+}

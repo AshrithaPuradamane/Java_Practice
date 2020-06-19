@@ -1,0 +1,23 @@
+/* Write a program that displays a menu with options 1. Add 2. Sub Based on the options
+chosen, read 2 numbers and perform the relevant operation. After performing the
+operation, the program should ask the user if he wants to continue. If the user presses y
+or Y, then the program should continue displaying the menu else the program should
+terminate */
+package com.java.practice;
+
+import java.util.Scanner;
+import java.util.StringTokenizer;
+
+public class AddSubUsingDoWhile {
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Please enter 2 numbers in the format (a,b)");
+		String input = scanner.nextLine();
+		StringTokenizer tokenizer = new StringTokenizer(input, ",");
+		
+		int firstNumber = Integer.parseInt(tokenizer.nextToken());
+		int secondNumber = Integer.parseInt(tokenizer.nextToken());
+	}
+
+}

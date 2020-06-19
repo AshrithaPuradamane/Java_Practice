@@ -1,0 +1,37 @@
+package com.management.employee;
+
+import java.util.Iterator;
+import java.util.Set;
+import java.util.TreeSet;
+
+public class EmployeeDBUsingTreeSet {
+	private Set<Employee> treeSet;
+
+	public EmployeeDBUsingTreeSet() {
+		treeSet = new TreeSet<>();
+	}
+
+	public boolean addEmployee(Employee e) {
+		return treeSet.add(e);
+	}
+
+	public boolean deleteEmployee(int empId) {
+		return treeSet.removeIf(e -> e.getEmpId() == empId);
+	}
+
+	public String showPaySlip(int empId) {
+		Iterator<Employee> it = treeSet.iterator();
+		while(it.hasNext()) {
+			Employee e = it.next();
+			if(e.getEmpId() == empId) {
+				return e.getEmpSalary()+"";
+			}
+		}
+		return null;
+	}
+
+	public Set<Employee> listAll() {
+		return treeSet;
+	}
+
+}

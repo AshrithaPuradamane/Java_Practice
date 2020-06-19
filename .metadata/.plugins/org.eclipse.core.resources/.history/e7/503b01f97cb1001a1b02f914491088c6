@@ -1,0 +1,48 @@
+package com.java.practice.collection;
+
+import java.util.ArrayList;
+import java.util.InputMismatchException;
+import java.util.List;
+import java.util.Scanner;
+
+public class EvenNumberArrayList {
+	private List<Integer> A1;
+	private List<Integer> A2;
+
+	public EvenNumberArrayList() {
+		A1 = new ArrayList<>();
+		A2 = new ArrayList<>();
+	}
+
+	public List<Integer> saveEvenNumbers(int N) {
+		for (int num = 2; num <= N; num++) {
+			if ((N % num) == 0) {
+				A1.add(num);
+			}
+		}
+		return A1;
+	}
+
+	public List<Integer> printEvenNumbers() {
+		return A2;
+
+	}
+
+	public int printEvenNumber(int N) {
+		return 0;
+	}
+
+	public static void main(String[] args) {
+		EvenNumberArrayList evenNumerArrayList = new EvenNumberArrayList();
+		Scanner scanner = new Scanner(System.in);
+		int input = 0;
+		try {
+			 input = scanner.nextInt();
+			List<Integer> savedA1 = evenNumerArrayList.saveEvenNumbers(input);
+			
+		} catch (InputMismatchException e) {
+			System.out.println("Entered input is not a valid integer number");
+		}
+	}
+
+}

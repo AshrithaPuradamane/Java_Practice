@@ -1,0 +1,21 @@
+package com.management.employee;
+
+public class EmployeeDB {
+
+	public boolean addEmployee(Employee e) {
+		
+	}
+	public boolean deleteEmployee(int empId) {
+		
+	}
+	public String showPaySlip(int empId) {
+		
+	}
+	public Employee[] listAll() {
+		
+	}
+	public static void main(String[] args) {
+
+	}
+
+}

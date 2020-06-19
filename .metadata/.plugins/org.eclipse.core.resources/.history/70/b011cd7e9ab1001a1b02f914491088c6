@@ -1,0 +1,33 @@
+package com.management.employee;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+public class EmployeeDB {
+	private List<Employee> list;
+
+	public EmployeeDB() {
+		list = new ArrayList<>();
+	}
+
+	public boolean addEmployee(Employee e) {
+		return list.add(e);
+	}
+
+	public boolean deleteEmployee(int empId) {
+		return list.removeIf(e -> e.getEmpId() == empId);
+	}
+
+	public String showPaySlip(int empId) {
+		
+	}
+
+	public List<Employee> listAll() {
+		Iterator<Employee> it = list.iterator();
+		while(it.hasNext()) {
+			
+		}
+	}
+
+}

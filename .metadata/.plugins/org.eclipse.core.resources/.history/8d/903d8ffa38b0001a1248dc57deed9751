@@ -1,0 +1,31 @@
+package com.java.practice;
+
+import java.util.Scanner;
+
+public class PrintColorCode {
+
+	public static void main(String[] args) {
+		System.out.println("Please enter a color code:");
+		Scanner scanner = new Scanner(System.in);
+		String input = scanner.next();
+		if (input.length() == 1) {
+
+			if (input.equals("R")) {
+				System.out.println("Red");
+			} else if (input.equals("B")) {
+				System.out.println("Blue");
+			} else if (input.equals("G")) {
+				System.out.println("Green");
+			} else if (input.equals("O")) {
+				System.out.println("Ornge");
+			} else if (input.equals("Y")) {
+				System.out.println("Yellow");
+			} else {
+				System.out.println("Invalid Code");
+			}
+		} else {
+			System.out.println("Invalid Code");
+		}
+		scanner.close();
+	}
+}

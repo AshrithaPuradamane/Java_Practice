@@ -1,0 +1,24 @@
+package com.java.practice;
+
+import java.util.Scanner;
+
+public class AlphabeltOrDigitOrSpecialCharacter {
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Please enter a charcter:");
+		if(args[0].length() > 1 || args.length >1) {
+			System.out.println("invalid input");
+		}else {
+		char input = scanner.next().charAt(0);
+		if (Character.isAlphabetic(input)) {
+			System.out.println("It is an Alphabet.");
+		} else if (Character.isDigit(input)) {
+			System.out.println("It is a digit.");
+		} else {
+			System.out.println("It is a special character.");
+		}
+		}
+		scanner.close();
+	}
+}

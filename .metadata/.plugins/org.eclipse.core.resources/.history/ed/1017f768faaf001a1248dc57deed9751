@@ -1,0 +1,25 @@
+package com.java.practice;
+
+import java.util.Scanner;
+
+public class NumberIsPositiveNegativeOrZero {
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		try {
+			int input = scanner.nextInt();
+			if (input < 0) {
+				System.out.println("Negative number.");
+			} else if (input > 0) {
+				System.out.println("Positive number.");
+			} else {
+				System.out.println("Number is zero.");
+			}
+		} catch (NumberFormatException e) {
+
+			System.out.println("Entered input is not a number");
+		}
+		scanner.close();
+	}
+
+}

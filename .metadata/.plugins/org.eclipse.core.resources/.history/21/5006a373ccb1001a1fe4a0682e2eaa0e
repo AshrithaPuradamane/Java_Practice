@@ -1,0 +1,11 @@
+/* Write a Java program to find if the given number is palindrome or not */
+package com.java.practice;
+
+public class palindrome {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
