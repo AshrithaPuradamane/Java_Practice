@@ -16,31 +16,39 @@ public class AddSubUsingDoWhile {
 		Scanner scanner = new Scanner(System.in);
 		Scanner scanner2 = new Scanner(System.in);
 		boolean flag = true;
+		boolean flag2 = true;
+		boolean flag3 = true;
 		String yes = null;
 		int option = 0;
 		int firstNumber = 0;
 		int secondNumber = 0;
 		do {
-			System.out.println("Please enter an option: 1:Add, 2:Sub");
-			try {
-				option = scanner.nextInt();
-			} catch (NumberFormatException e) {
-				flag = false;
-				System.out.println("Please enter the input in correct format");
-			} catch (InputMismatchException e) {
-				System.out.println("Please enter the input in correct format");
-			}
-			System.out.println("Please enter 2 numbers in the format (a,b)");
-			try {
-				String input = scanner2.nextLine();
-				StringTokenizer tokenizer = new StringTokenizer(input, ",");
-				firstNumber = Integer.parseInt(tokenizer.nextToken());
-				secondNumber = Integer.parseInt(tokenizer.nextToken());
-			} catch (NoSuchElementException e) {
-				System.out.println("Please enter the input in correct format");
-			} catch (NumberFormatException e) {
-				System.out.println("Please enter the input in correct format");
-			}
+			do {
+				System.out.println("Please enter 1 or 2 (1:Add, 2:Sub)");
+				try {
+					option = scanner.nextInt();
+					flag2 = false;
+				} catch (NumberFormatException e) {
+					System.out.println("Please enter the input in correct format");
+
+				} catch (InputMismatchException e) {
+					System.out.println("Please enter the input in correct format");
+				}
+			} while (flag2);
+			do {
+				System.out.println("Please enter 2 numbers in the format (a,b)");
+				try {
+					String input = scanner2.nextLine();
+					StringTokenizer tokenizer = new StringTokenizer(input, ",");
+					firstNumber = Integer.parseInt(tokenizer.nextToken());
+					secondNumber = Integer.parseInt(tokenizer.nextToken());
+					flag3 = false;
+				} catch (NoSuchElementException e) {
+					System.out.println("Please enter the input in correct format");
+				} catch (NumberFormatException e) {
+					System.out.println("Please enter the input in correct format");
+				}
+			} while (flag3);
 			if (option == 1) {
 				System.out.println("Add result is " + (firstNumber + secondNumber));
 			} else if (option == 2) {
@@ -53,17 +61,17 @@ public class AddSubUsingDoWhile {
 				yes = scanner.next();
 			} catch (NoSuchElementException e) {
 				System.out.println("Please enter the input in correct format");
+				break;
 			} catch (NumberFormatException e) {
 				System.out.println("Please enter the input in correct format");
+				break;
 			}
 			if (!(yes.equalsIgnoreCase("y"))) {
 				System.out.println("Program terminated.");
 				flag = false;
 				break;
 			}
-
 		} while (flag);
 		scanner.close();
 	}
-
 }
